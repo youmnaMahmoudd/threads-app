@@ -36,7 +36,7 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
       },
     });
 
-  // Count the total number of top-level posts (threads) i.e., threads that are not comments.
+  // Count the total number of top-level posts
   const totalPostsCount = await Thread.countDocuments({
     parentId: { $in: [null, undefined] },
   }); // Get the total count of posts
